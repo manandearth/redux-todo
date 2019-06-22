@@ -27,7 +27,7 @@ const TodoList = ({ todos }) => (
 const mapStateToProps = state => {
   const { visibilityFilter } = state;
   const todos = getTodosByVisibilityFilter(state, visibilityFilter);
-  return { todos };
+      return { todos };
   //   const allTodos = getTodos(state);
   //   return {
   //     todos:
