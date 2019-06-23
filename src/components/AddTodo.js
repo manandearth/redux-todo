@@ -8,7 +8,6 @@ class AddTodo extends React.Component {
       this.state = { input: "" };
     }
     
-
   updateInput = input => {
     this.setState({ input });
   };

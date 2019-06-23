@@ -1,9 +1,9 @@
-import { ADD_TODO, TOGGLE_TODO } from "../actionTypes";
+import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from "../actionTypes";
 
 const initialState = {
   allIds: [],
   byIds: {}
-};
+}; 
 
 export default function(state = initialState, action) {
   switch (action.type) {
@@ -21,7 +21,7 @@ export default function(state = initialState, action) {
         }
       };
     }
-    case TOGGLE_TODO: {
+      case TOGGLE_TODO: {
       const { id } = action.payload;
       return {
         ...state,
@@ -34,7 +34,23 @@ export default function(state = initialState, action) {
         }
       };
     }
-    default:
+	  case REMOVE_TODO: {
+		  const  { id }  = action.payload;
+		  const newByIds = Object.assign({}, state.byIds);
+		  const idToString = id.toString();
+		  const newAllIds = (state.allIds.filter(idx => idx !== id));
+		  delete newByIds[id];
+		  return { 
+	  		  ...state,
+			  allIds: newAllIds,
+			  byIds: newByIds};
+	  		 
+		  
+			  }
+		  
+	  
+	  
+		  default:
       return state;
   }
 }
