@@ -44,3 +44,7 @@ span.todo-item__text {
 .filter--active {
   border-bottom: 3px solid black;
 }
+
+span.remove-todo {
+    cursor: pointer;
+}

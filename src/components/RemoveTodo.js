@@ -17,11 +17,11 @@ class RemoveTodo extends React.Component {
     render() {
         console.log(this.props);
         return (
-            <div>
-              <button className="remove-todo" onClick={this.handleRemoveTodo}>
-                Delete
-              </button>
-            </div>
+            
+              <span className="remove-todo" onClick={this.handleRemoveTodo}>
+               - - Delete - -
+              </span>
+            
         );
     }
 }
