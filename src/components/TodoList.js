@@ -26,22 +26,9 @@ class TodoList extends React.Component {
               
                   }
          </ul>
-        )
+        );
     }
 } 
-
-
-const TodoList1 = 
-      ({ todos, visibilityFilter }) => (
-  <ul className="todo-list">
-    {todos && todos.length
-      ? todos.map((todo, index) => {
-          return <Todo key={`todo-${todo.id}`} todo={todo} />;
-        })
-        : "no Todos left!" 
-    }
-  </ul>
-      );
     
 const mapStateToProps = state => {
   const { visibilityFilter } = state;
