@@ -27,3 +27,8 @@ export const getTodosByVisibilityFilter = (store, visibilityFilter) => {
       return allTodos;
   }
 };
+
+export const getTodoByComp = (store, comp) => {
+	const allTodos = getTodos(store);
+	return allTodos.filter(todo => (todo.comp === comp));
+};

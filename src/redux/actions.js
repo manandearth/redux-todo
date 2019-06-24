@@ -2,9 +2,10 @@ import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO, SET_FILTER } from "./actionTypes";
 
 let nextTodoId = 0;
 
-export const addTodo = content => ({
+export const addTodo = (comp, content) => ({
   type: ADD_TODO,
-  payload: {
+	payload: {
+		comp,
     id: ++nextTodoId,
     content
   }

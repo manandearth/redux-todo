@@ -28,7 +28,8 @@ class TodoList extends React.Component {
          </ul>
         );
     }
-} 
+}
+
     
 const mapStateToProps = state => {
   const { visibilityFilter } = state;

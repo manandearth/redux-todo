@@ -2,6 +2,7 @@ import React from 'react';
 import AddTodo from './components/AddTodo.js';
 import TodoList from './components/TodoList.js';
 import VisibilityFilters from './components/VisibilityFilters.js';
+import TodoComp from './components/TodoComp.js';
 import './App.css';
 
 export default function TodoApp () {
@@ -12,5 +13,6 @@ export default function TodoApp () {
               <AddTodo />
               <TodoList />
               <VisibilityFilters />
+              <TodoComp /> {/*the new element */}
             </div>
-	)}
+	);}

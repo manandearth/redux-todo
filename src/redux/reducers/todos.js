@@ -8,15 +8,16 @@ const initialState = {
 export default function(state = initialState, action) {
   switch (action.type) {
     case ADD_TODO: {
-      const { id, content } = action.payload;
+		const { id, comp, content } = action.payload;
       return {
         ...state,
         allIds: [...state.allIds, id],
         byIds: {
           ...state.byIds,
-          [id]: {
-            content,
-            completed: false
+			[id]: {
+				comp,
+				content,
+				completed: false
           }
         }
       };
@@ -37,7 +38,6 @@ export default function(state = initialState, action) {
 	  case REMOVE_TODO: {
 		  const  { id }  = action.payload;
 		  const newByIds = Object.assign({}, state.byIds);
-		  const idToString = id.toString();
 		  const newAllIds = (state.allIds.filter(idx => idx !== id));
 		  delete newByIds[id];
 		  return { 
