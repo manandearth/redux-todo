@@ -2,8 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import { addTodo } from "../redux/actions";
 
+const tempComp = 1;
+
 class AddTodo extends React.Component {
-	
+
 	constructor(props) {
 		super(props);
 		this.state = { input: "" };
@@ -15,15 +17,14 @@ class AddTodo extends React.Component {
   };
 
     handleAddTodo = () => {
-	    const tempComp = 1;
         this.props.addTodo(tempComp, this.state.input); //dispatches actions to add todo
     this.setState({ input: "" }); // sets state back to empty string
     };
 
     handleEnterKey = (e) => {
         const keyCode = e.keyCode || e.which;
-        if (keyCode === 13) , {
-            this.props.addTodo(this.tempComp, this.state.input);
+        if (keyCode === 13) {
+            this.props.addTodo(tempComp, this.state.input);
             this.setState({ input: "" });
         }}
 

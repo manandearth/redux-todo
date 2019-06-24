@@ -28,7 +28,20 @@ export const getTodosByVisibilityFilter = (store, visibilityFilter) => {
   }
 };
 
-export const getTodoByComp = (store, comp) => {
+export const getTodosByComp = (store, comp) => {
 	const allTodos = getTodos(store);
 	return allTodos.filter(todo => (todo.comp === comp));
+};
+
+export const getTodosByVisAndComp = (store, comp, visibilityFilter) => {
+	const Todos = getTodosByComp(store, comp);
+	switch (visibilityFilter) {
+    case VISIBILITY_FILTERS.COMPLETED:
+      return Todos.filter(todo => todo.completed);
+    case VISIBILITY_FILTERS.INCOMPLETE:
+      return Todos.filter(todo => !todo.completed);
+    case VISIBILITY_FILTERS.ALL:
+    default:
+      return Todos;
+	}
 };

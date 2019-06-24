@@ -1,12 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 import Todo from "./Todo";
-import { getTodosByVisibilityFilter } from "../redux/selectors";
+import { getTodosByVisAndComp } from "../redux/selectors";
 
 class TodoList extends React.Component {
     constructor(props) {
         super(props);
         this.handleVisibilityFilter = this.handleVisibilityFilter.bind(this);
+        const comp = 1;
     }
 
     handleVisibilityFilter() {
@@ -14,6 +15,7 @@ class TodoList extends React.Component {
     render() {
         const todos = this.props.todos;
         const visibilityFilter =  this.props.visibiltyFilter;
+        // const comp = this.props.comp;
         return (
             <ul className="todo-list">
               {todos && todos.length
@@ -32,10 +34,11 @@ class TodoList extends React.Component {
 
     
 const mapStateToProps = state => {
-  const { visibilityFilter } = state;
-  const todos = getTodosByVisibilityFilter(state, visibilityFilter);
+    const { visibilityFilter, comp=1 } = state; {/* waiting for dynamic comp assignment */}
+    const todos = getTodosByVisAndComp(state, comp, visibilityFilter);
     return {
         todos: todos,
+        comp: comp,
         visibiltyFilter: state.visibilityFilter};
 };    
     export default connect(mapStateToProps)(TodoList);
