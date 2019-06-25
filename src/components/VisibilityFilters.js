@@ -8,14 +8,12 @@ class VisibilityFilters extends React.Component {
 
     constructor(props) {
         super(props);
-        this.handleSetFilter = this.handleSetFilter.bind(props);
+        this.state = "";
     }
 
-    handleSetFilter(filter) {
-        
-        console.log(this.props.list);
+    handleSetFilter = ( filter ) => {
         this.props.setFilter(this.props.list, filter);
-    }
+        }
 
     render() {
         const activeFilter = this.props.activeFilter;
@@ -28,13 +26,9 @@ class VisibilityFilters extends React.Component {
                         key={`visibility-filter-${currentFilter}`}
                         className={cx(
                             "filter",
-                            currentFilter === activeFilter && "filter--active"
-                        )}
-                        onClick={() => (this.props.setFilter(this.props.list, currentFilter))
-                            
-                        }
-                        
-                      >
+                            currentFilter === activeFilter && "filter--active")}
+                        onClick={() =>
+                            (this.handleSetFilter(currentFilter)) }>
                         {currentFilter}
                       </span>
                   );
@@ -49,13 +43,17 @@ const mapStateToProps = ( state, ownProps ) => {
     const list = ownProps.list;
     const visibilityFilter = state.visibilityFilter;
     return {
-        activeFilter: visibilityFilter[list],
-        list: list
-        
+        activeFilter: visibilityFilter[list]
+     
     };
 };
+
+const mapDispatchToProps = {
+    setFilter
+};
+
 // export default VisibilityFilters;
 export default connect(
   mapStateToProps,
-  { setFilter }
+  mapDispatchToProps
 )(VisibilityFilters);
