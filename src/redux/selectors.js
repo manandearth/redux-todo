@@ -28,13 +28,13 @@ export const getTodosByVisibilityFilter = (store, visibilityFilter) => {
   }
 };
 
-export const getTodosByList = (store, comp) => {
+export const getTodosByList = (store, list) => {
 	const allTodos = getTodos(store);
-	return allTodos.filter(todo => (todo.comp === comp));
+	return allTodos.filter(todo => (todo.list === list));
 };
 
-export const getTodosByVisAndList = (store, comp, visibilityFilter) => {
-	const Todos = getTodosByList(store, comp);
+export const getTodosByVisAndList = (store, list, visibilityFilter) => {
+	const Todos = getTodosByList(store, list);
 	switch (visibilityFilter) {
     case VISIBILITY_FILTERS.COMPLETED:
       return Todos.filter(todo => todo.completed);

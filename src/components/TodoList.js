@@ -14,7 +14,6 @@ class TodoList extends React.Component {
     render() {
         const todos = this.props.todos;
         const visibilityFilter =  this.props.visibiltyFilter;
-        const list = this.props.list; //TODO -> create this prop
         return (
             <ul className="todo-list">
               {todos && todos.length
@@ -26,14 +25,14 @@ class TodoList extends React.Component {
                   "No uncompleted tasks!"
               
                   }
-            <span>{this.props.list ? this.propList : " //no props.list"}</span> </ul>
+             </ul>
         );
     }
 }
 
     
 const mapStateToProps = ( state, ownProps ) => {
-    const { visibilityFilter } = state; {/* waiting for dynamic list assignment */}
+    const { visibilityFilter } = state; 
     const { list } = ownProps;
     const todos = getTodosByVisAndList(state, list, visibilityFilter);
     return {
