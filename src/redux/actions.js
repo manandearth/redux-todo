@@ -2,10 +2,10 @@ import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO, SET_FILTER, ADD_LIST } from "./acti
 
 let nextTodoId = 0;
 let nextListId = 1;
-export const addTodo = (comp, content) => ({
+export const addTodo = (list, content) => ({
   type: ADD_TODO,
 	payload: {
-		comp,
+		list,
     id: ++nextTodoId,
     content
   }

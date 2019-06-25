@@ -26,7 +26,10 @@ class TodoApp extends React.Component {
               <div>{this.props.listsArray && this.props.listsArray !== 0 ?
                   this.props.listsArray.map(list =>
                       <div>
-                        <TodoComp listName={this.props.lists[list]} />
+                        <TodoComp
+                          listName={this.props.lists[list]}
+                          list={list}
+                        />
                         {console.log(this.props.lists[list])}
                    </div>
                   ) : this.props.a}</div>

@@ -7,7 +7,6 @@ class TodoList extends React.Component {
     constructor(props) {
         super(props);
         this.handleVisibilityFilter = this.handleVisibilityFilter.bind(this);
-        const list = 1;
     }
 
     handleVisibilityFilter() {
@@ -27,14 +26,15 @@ class TodoList extends React.Component {
                   "No uncompleted tasks!"
               
                   }
-         </ul>
+            <span>{this.props.list ? this.propList : " //no props.list"}</span> </ul>
         );
     }
 }
 
     
-const mapStateToProps = state => {
-    const { visibilityFilter, list=1 } = state; {/* waiting for dynamic list assignment */}
+const mapStateToProps = ( state, ownProps ) => {
+    const { visibilityFilter } = state; {/* waiting for dynamic list assignment */}
+    const { list } = ownProps;
     const todos = getTodosByVisAndList(state, list, visibilityFilter);
     return {
         todos: todos,

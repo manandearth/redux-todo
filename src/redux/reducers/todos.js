@@ -9,14 +9,14 @@ const initialState = {
 export default function(state = initialState, action) {
   switch (action.type) {
     case ADD_TODO: {
-		const { id, comp, content } = action.payload;
+		const { id, list, content } = action.payload;
       return {
         ...state,
         allIds: [...state.allIds, id],
         byIds: {
           ...state.byIds,
 			[id]: {
-				comp,
+				list,
 				content,
 				completed: false
           }
