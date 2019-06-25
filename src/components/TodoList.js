@@ -6,14 +6,11 @@ import { getTodosByVisAndList } from "../redux/selectors";
 class TodoList extends React.Component {
     constructor(props) {
         super(props);
-        this.handleVisibilityFilter = this.handleVisibilityFilter.bind(this);
     }
 
-    handleVisibilityFilter() {
-    }
     render() {
         const todos = this.props.todos;
-        const visibilityFilter =  this.props.visibiltyFilter;
+        const visibilityFilter =  this.props.visibilityFilter;
         return (
             <ul className="todo-list">
               {todos && todos.length
@@ -38,7 +35,8 @@ const mapStateToProps = ( state, ownProps ) => {
     return {
         todos: todos,
         list: list,
-        visibiltyFilter: state.visibilityFilter};
+        visibilityFilter: state.visibilityFilter
+    };
 };    
     export default connect(mapStateToProps)(TodoList);
 

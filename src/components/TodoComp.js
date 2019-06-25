@@ -9,9 +9,9 @@ function TodoComp(props) {
 	return (
 			<div className="todo-comp">
               <h2>{props.listName}</h2>
-              <AddTodo list={props.list}/>
+              <AddTodo list={props.list} />
               <TodoList list={props.list} />
-              <VisibilityFilters />
+              <VisibilityFilters list={props.list} />
             </div>
 	    );
     }

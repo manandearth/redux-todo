@@ -21,7 +21,12 @@ export const removeTodo = id => ({
 	payload: { id }
 });
 
-export const setFilter = filter => ({ type: SET_FILTER, payload: { filter } });
+export const setFilter = (list, filter) => ({
+	type: SET_FILTER,
+	payload: {
+		list: list,
+		filter: filter }
+});
 
 
 export const addList = list => ({
