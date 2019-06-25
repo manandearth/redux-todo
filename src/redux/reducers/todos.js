@@ -1,6 +1,7 @@
-import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from "../actionTypes";
+import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO, ADD_LIST } from "../actionTypes";
 
 const initialState = {
+	lists: {1: "Todo"},
   allIds: [],
   byIds: {}
 }; 
@@ -46,7 +47,15 @@ export default function(state = initialState, action) {
 			  byIds: newByIds};
 	  		 
 		  
-			  }
+	  }
+	  case ADD_LIST: {
+		  const { listId, list } = action.payload;
+		  const newLists = Object.assign(state.lists, {[listId]: list});
+				return {
+					...state,
+					lists: newLists
+				};
+	  }
 		  
 	  
 	  

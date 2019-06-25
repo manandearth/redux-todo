@@ -1,7 +1,7 @@
-import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO, SET_FILTER } from "./actionTypes";
+import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO, SET_FILTER, ADD_LIST } from "./actionTypes";
 
 let nextTodoId = 0;
-
+let nextListId = 1;
 export const addTodo = (comp, content) => ({
   type: ADD_TODO,
 	payload: {
@@ -22,3 +22,10 @@ export const removeTodo = id => ({
 });
 
 export const setFilter = filter => ({ type: SET_FILTER, payload: { filter } });
+
+
+export const addList = list => ({
+	type: ADD_LIST,
+	payload: {
+		list,
+		listId: ++nextListId}});
