@@ -4,11 +4,11 @@ import TodoList from './TodoList.js';
 import VisibilityFilters from './VisibilityFilters.js';
 import { connect } from 'react-redux';
 
-function TodoComp() {  
+function TodoComp(props) {  
 
 	return (
 			<div className="todo-comp">
-              <h2>waiting to become dynamic..</h2>
+              <h2>{props.listName}</h2>
               <AddTodo />
               <TodoList />
               <VisibilityFilters />

@@ -45,3 +45,7 @@ export const getTodosByVisAndComp = (store, comp, visibilityFilter) => {
       return Todos;
 	}
 };
+
+export const getListById =  (store, listId) => {
+	return store.todos.lists.listId;
+};
