@@ -3,6 +3,19 @@
 Playing with a basic Todo List.
 
 
+App lives in: https://manandearth.github.io/redux-todo/
+
+## Features
+
+- Mark completed/not
+- Filter by completion
+- Add todo list
+- TODO - rename lists and individual todos
+- TODO - drag todos to re-order
+- TODO - css pad lists to make sense in page  
+- TODD - drag lists to reposition
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
