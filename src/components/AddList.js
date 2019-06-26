@@ -18,12 +18,21 @@ class AddList extends React.Component {
         this.setState({ input: "" });
         
     }
+
+        handleEnterKey = (e) => {
+        const keyCode = e.keyCode || e.which;
+        if (keyCode === 13) {
+            this.props.addList(this.state.input);
+            this.setState({ input: "" });
+        }}
+
     
 	render() {
 		return (
 			<div>
               <input
                 onChange={e => this.updateInput(e.target.value)}
+                onKeyDown={this.handleEnterKey}
                 value={this.state.input}>
               </input>
               <button className='add-list' onClick={this.handleAddList}>
