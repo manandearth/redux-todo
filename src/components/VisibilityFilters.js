@@ -10,7 +10,7 @@ function VisibilityFilters({ list, visibilityFilter, setFilter, activeFilter }) 
             <div className="visibility-filters">
               {Object.keys(VISIBILITY_FILTERS).map(filterKey => {
                   const currentFilter = VISIBILITY_FILTERS[filterKey];
-                  const activeFilter = visibilityFilter[list];
+                  /* const activeFilter = visibilityFilter[list]; */
                   return (
                       <span
                         key={`visibility-filter-${currentFilter}`}
@@ -36,7 +36,9 @@ const mapStateToProps = ( state, ownProps ) => {
     const visibilityFilter = state.visibilityFilter;
     return {
         visibilityFilter: visibilityFilter,
-        list: list
+        list: list, 
+        activeFilter: visibilityFilter[list] 
+       
      
     };
 };

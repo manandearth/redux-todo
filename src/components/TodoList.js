@@ -12,8 +12,8 @@ function TodoList ({ state, list, visibilityFilter }) {
               ? filteredTodos.map((todo, index) => {
                   return <Todo key={`todo-${todo.id}`} todo={todo} />;
               }) :
-              visibilityFilter[list] === "all" ? "No todos left!" :
-              visibilityFilter[list] === "completed" ? "No completed here..!" :
+              visibilityFilter === "all" ? "No todos left!" :
+              visibilityFilter === "completed" ? "No completed here..!" :
               "No uncompleted tasks!"
           
           }
@@ -30,7 +30,8 @@ const mapStateToProps = ( state, ownProps ) => {
     return {
         state,
         list: list,
-        visibilityFilter: visibilityFilter
+        visibilityFilter: visibilityFilter[list]
+        
     };
 };    
     export default connect(mapStateToProps)(TodoList);
