@@ -1,7 +1,7 @@
 import React from 'react';
-import AddTodo from './AddTodo.js';
-import TodoList from './TodoList.js';
-import VisibilityFilters from './VisibilityFilters.js';
+import AddTodo from './AddTodo';
+import TodoList from './TodoList';
+import VisibilityFilters from './VisibilityFilters';
 import { connect } from 'react-redux';
 
 function TodoComp(props) {  

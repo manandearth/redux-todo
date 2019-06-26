@@ -3,39 +3,34 @@ import { connect } from "react-redux";
 import Todo from "./Todo";
 import { getTodosByVisAndList } from "../redux/selectors";
 
-class TodoList extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+function TodoList ({ state, list, visibilityFilter }) {
 
-    render() {
-        const todos = this.props.todos;
-        const visibilityFilter =  this.props.visibilityFilter;
-        return (
-            <ul className="todo-list">
-              {todos && todos.length
-                  ? todos.map((todo, index) => {
-                      return <Todo key={`todo-${todo.id}`} todo={todo} />;
-                  }) :
-                  visibilityFilter === "all" ? "No todos left!" :
-                  visibilityFilter === "completed" ? "No completed here..!" :
-                  "No uncompleted tasks!"
-              
-                  }
-             </ul>
-        );
-    }
+    const filteredTodos = getTodosByVisAndList(state, list, visibilityFilter);
+    return (
+        <ul className="todo-list">
+          {filteredTodos && filteredTodos.length
+              ? filteredTodos.map((todo, index) => {
+                  return <Todo key={`todo-${todo.id}`} todo={todo} />;
+              }) :
+              visibilityFilter[list] === "all" ? "No todos left!" :
+              visibilityFilter[list] === "completed" ? "No completed here..!" :
+              "No uncompleted tasks!"
+          
+          }
+        </ul>
+    );
 }
 
-    
+
+
 const mapStateToProps = ( state, ownProps ) => {
     const { visibilityFilter } = state; 
     const { list } = ownProps;
-    const todos = getTodosByVisAndList(state, list, visibilityFilter);
+   
     return {
-        todos: todos,
+        state,
         list: list,
-        visibilityFilter: state.visibilityFilter
+        visibilityFilter: visibilityFilter
     };
 };    
     export default connect(mapStateToProps)(TodoList);
