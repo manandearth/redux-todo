@@ -1,8 +1,8 @@
-import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO, SET_FILTER, ADD_LIST } from "./actionTypes";
+import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO, SET_FILTER, ADD_LIST, RENAME_LIST } from "./actionTypes";
 
 let nextTodoId = 0;
 let nextListId = 1;
-export const addTodo = (list, content) => ({
+export const addTodo = ( list, content ) => ({
   type: ADD_TODO,
 	payload: {
 		list,
@@ -21,7 +21,7 @@ export const removeTodo = id => ({
 	payload: { id }
 });
 
-export const setFilter = (list, filter) => ({
+export const setFilter = ( list, filter ) => ({
 	type: SET_FILTER,
 	payload: {
 		list: list,
@@ -33,4 +33,12 @@ export const addList = list => ({
 	type: ADD_LIST,
 	payload: {
 		list,
-		listId: ++nextListId}});
+		listId: ++nextListId }
+});
+
+export const renameList = ( listId, newTitle ) => ({
+	type: RENAME_LIST,
+	payload: {
+		id: listId,
+		title: newTitle }
+});
