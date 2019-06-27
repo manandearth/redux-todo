@@ -30,8 +30,14 @@ class TodoComp extends React.Component {
         this.setState({ title });
     }
 
-    handleRemoveList = () => {this.props.removeList(this.props.list);
-        this.props.removeListFilter(this.props.list);}
+    handleRemoveList = (props) => { 
+        // const isSure = window.confirm("remove the list?");
+        
+        if (window.confirm("are you sure?")) {
+            this.props.removeList(this.props.list);
+            this.props.removeListFilter(this.props.list);}
+        
+    }
     
     
     render(props) {  
@@ -39,15 +45,19 @@ class TodoComp extends React.Component {
 			<div className="todo-comp">
               <div>
                 {this.state.editable ?
-                  <input
-                    onChange={e =>this.updateTitle(e.target.value)}
-                    onKeyDown={this.handleEnterKey}
-                    value={this.state.title}>
-                  </input> :
-                  <h2 onClick={this.handleTitleClick}>{this.props.listName}</h2>}
-                <span
-                  className="remove-list"
-                  onClick={this.handleRemoveList}>X</span>
+                    <input
+                      onChange={e => this.updateTitle(e.target.value)}
+                      onKeyDown={this.handleEnterKey}
+                      value={this.state.title}>
+                    </input>
+                    :
+                    <div>
+                    <h2>
+                      <span onClick={this.handleTitleClick}>{this.props.listName}</span>
+                      <span
+                        className="remove-list"
+                        onClick={this.handleRemoveList}> remove</span></h2>
+                    </div>}
               </div>
               <AddTodo list={this.props.list} />
               <TodoList list={this.props.list} />

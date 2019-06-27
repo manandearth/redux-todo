@@ -48,3 +48,15 @@ span.todo-item__text {
 span.remove-todo {
     cursor: pointer;
 }
+
+span.remove-list {
+    cursor: pointer;
+    text-align: right;
+    font-size: 1rem;
+    font-style: italic;
+    color: gray;
+}
+
+span.remove-list:hover {
+    color: red;
+}
