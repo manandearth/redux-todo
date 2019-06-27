@@ -46,6 +46,7 @@ class TodoComp extends React.Component {
               <div>
                 {this.state.editable ?
                     <input
+                      className="rename-list"
                       onChange={e => this.updateTitle(e.target.value)}
                       onKeyDown={this.handleEnterKey}
                       value={this.state.title}>
@@ -53,7 +54,9 @@ class TodoComp extends React.Component {
                     :
                     <div>
                     <h2>
-                      <span onClick={this.handleTitleClick}>{this.props.listName}</span>
+                      <span onClick={this.handleTitleClick}
+                            className="list-title"
+                      >{this.props.listName}</span>
                       <span
                         className="remove-list"
                         onClick={this.handleRemoveList}> remove</span></h2>

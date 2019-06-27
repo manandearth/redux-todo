@@ -11,7 +11,8 @@
 
 /** todo list **/
 .todo-list {
-  margin-top: 1rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
   text-align: left;
   list-style: none;
 }
@@ -59,4 +60,14 @@ span.remove-list {
 
 span.remove-list:hover {
     color: red;
+}
+
+input.rename-list {
+    font-size: 1.4rem;
+    font-style: italic;
+    margin: 1rem;
+    padding: 1 rem;
+}
+span.list-title {
+    margin: 1rem;
 }
