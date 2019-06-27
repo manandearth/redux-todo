@@ -3,7 +3,7 @@ import AddTodo from './AddTodo';
 import TodoList from './TodoList';
 import VisibilityFilters from './VisibilityFilters';
 import { connect } from 'react-redux';
-import { renameList, removeList } from '../redux/actions.js';
+import { renameList, removeList, removeListFilter } from '../redux/actions.js';
 
 class TodoComp extends React.Component {
 
@@ -30,7 +30,8 @@ class TodoComp extends React.Component {
         this.setState({ title });
     }
 
-    handleRemoveList = () => this.props.removeList(this.props.list);
+    handleRemoveList = () => {this.props.removeList(this.props.list);
+        this.props.removeListFilter(this.props.list);}
     
     
     render(props) {  
@@ -58,5 +59,5 @@ class TodoComp extends React.Component {
 
 export default connect(
     null,
-    { renameList, removeList }
+    { renameList, removeList, removeListFilter }
 )(TodoComp);
