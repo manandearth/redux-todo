@@ -66,19 +66,19 @@ export default function(state = initialState, action) {
 			};
 		}
 			//TODO -> in the following case I need to also do the following:
-			// 1. remove this id from the visibilityFilter prop in the store
-			// 2. remove the id from allIds
-			// 3. add an alert for confirmation of deletion.
+			// 1. remove the id from allIds
+			// 2. add an alert for confirmation of deletion.
 		case REMOVE_LIST: {
 			const { list } = action.payload;
 			const newByIds = Object.assign({}, state.byIds); //just duplicating the object in order not to mutate it with delete.
-			delete newByIds[list];
+			Object.keys(newByIds).forEach(key => newByIds[key].list === list ? delete newByIds[key] : null);
 			const newLists = Object.assign({}, state.lists);
 			delete newLists[list];
 			return {
-				...state,
+				
 				lists: newLists,
-				byIds: newByIds
+				byIds: newByIds,
+				allIds: state.allIds //TODO: get the id in order to remove the todos' id's from this property 
 			};
 		}
 		default:
