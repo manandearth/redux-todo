@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO, SET_FILTER, ADD_LIST, RENAME_LIST } from "./actionTypes";
+import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO, SET_FILTER, ADD_LIST, RENAME_LIST, REMOVE_LIST } from "./actionTypes";
 
 let nextTodoId = 0;
 let nextListId = 1;
@@ -41,4 +41,10 @@ export const renameList = ( listId, newTitle ) => ({
 	payload: {
 		id: listId,
 		title: newTitle }
+});
+
+export const removeList = list => ({
+	type: REMOVE_LIST,
+	payload: {
+		list}
 });

@@ -10,7 +10,9 @@ App lives in: https://manandearth.github.io/redux-todo/
 - Mark completed/not
 - Filter by completion
 - Add todo list
-- TODO - rename lists and individual todos
+- DONE - rename lists  
+- TODO - rename todos
+- WIP - remove list
 - TODO - drag todos to re-order
 - TODO - css pad lists to make sense in page  
 - TODD - drag lists to reposition

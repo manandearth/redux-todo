@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO, ADD_LIST, RENAME_LIST } from "../actionTypes";
+import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO, ADD_LIST, RENAME_LIST, REMOVE_LIST } from "../actionTypes";
 
 const initialState = {
 	lists: {1: "Todo"},
@@ -65,7 +65,23 @@ export default function(state = initialState, action) {
 				lists: newLists
 			};
 		}
-		  default:
+			//TODO -> in the following case I need to also do the following:
+			// 1. remove this id from the visibilityFilter prop in the store
+			// 2. remove the id from allIds
+			// 3. add an alert for confirmation of deletion.
+		case REMOVE_LIST: {
+			const { list } = action.payload;
+			const newByIds = Object.assign({}, state.byIds); //just duplicating the object in order not to mutate it with delete.
+			delete newByIds[list];
+			const newLists = Object.assign({}, state.lists);
+			delete newLists[list];
+			return {
+				...state,
+				lists: newLists,
+				byIds: newByIds
+			};
+		}
+		default:
       return state;
   }
 }
