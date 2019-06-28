@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from './components/navbar';
 import AddTodo from './components/AddTodo.js';
 import TodoList from './components/TodoList.js';
 import VisibilityFilters from './components/VisibilityFilters.js';
@@ -19,10 +20,18 @@ class TodoApp extends React.Component {
     
     render() {
         return (
-			<div className="todo-app">
-			  <h1>Todo List</h1>
-              <h2>Extending the redux basic example. </h2>
-               <AddList />
+            <div>
+              <Navbar />
+			  <div className="todo-app">
+              <div className="app-header">
+			    <p>Create multiple lists.<br /> 
+                  Click an item to toggle completion.<br />
+                  Filter the views: <b>'all/completed/incomplete'</b>.<br />
+                  Add a new list using the field below.<br />
+                  Click a list title to rename.
+                </p>
+              </div>
+              <AddList />
               <div>{this.props.listsArray && this.props.listsArray !== 0 ?
                   this.props.listsArray.map(list =>
                       <div>
@@ -33,6 +42,7 @@ class TodoApp extends React.Component {
                         {console.log(this.props.lists[list])}
                    </div>
                   ) : this.props.a}</div>
+            </div>
             </div>
 	);
     }
