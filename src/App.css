@@ -114,6 +114,10 @@ span.remove-todo {
     cursor: pointer;
 }
 
+span.remove-todo:hover {
+    color: red;
+}
+
 span.remove-list {
     cursor: pointer;
     text-align: right;
