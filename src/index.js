@@ -8,8 +8,8 @@ import './App.css';
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(
-		<Provider store={store}>
-	<TodoApp />
-        </Provider>,
+	<Provider store={store}>
+	  <TodoApp />
+    </Provider>,
     rootElement
 );
