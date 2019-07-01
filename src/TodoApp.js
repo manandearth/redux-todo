@@ -8,6 +8,7 @@ import AddList from './components/AddList.js';
 import { getListById } from './redux/selectors.js';
 import './App.css';
 import { connect } from 'react-redux';
+import Draggable from 'react-draggable';
 
 class TodoApp extends React.Component {
     constructor(props) {
@@ -34,13 +35,16 @@ class TodoApp extends React.Component {
               <AddList />
               <div>{this.props.listsArray && this.props.listsArray !== 0 ?
                   this.props.listsArray.map(list =>
+                      <Draggable
+                        enableUserSelectHack={false}> {/*passing this prop to allow typing in the textfield child */}
                       <div>
                         <TodoComp
                           listName={this.props.lists[list]}
                           list={list}
                         />
                         {console.log(this.props.lists[list])}
-                   </div>
+                      </div>
+                      </Draggable>
                   ) : this.props.a}</div>
             </div>
             </div>
