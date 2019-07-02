@@ -29,6 +29,7 @@ class AddTodo extends React.Component {
     return (
       <div>
         <input
+          key="add-todo-input"
           onChange={e => this.updateInput(e.target.value)}
           onKeyDown={this.handleEnterKey}
           value={this.state.input}

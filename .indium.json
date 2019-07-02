@@ -1,0 +1,10 @@
+{
+  "configurations": [
+    {
+      "name": "Web project",
+		"type": "chrome",
+		"root": "public",
+		"url": "http://localhost:3000/index.html"
+    }
+  ]
+}

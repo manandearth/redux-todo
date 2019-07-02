@@ -10,10 +10,11 @@ import './App.css';
 import { connect } from 'react-redux';
 import Draggable from 'react-draggable';
 import GridLayout from 'react-grid-layout';
+import { Responsive, WidthProvider } from 'react-grid-layout';
 import '../node_modules/react-grid-layout/css/styles.css';
 import '../node_modules/react-resizable/css/styles.css';
 
-// const ResponsiveReactGridLayout = WidthProvider(Responsive);
+const ResponsiveGridLayout = WidthProvider(Responsive);
 
 class TodoApp extends React.Component {
     constructor(props) {
@@ -43,7 +44,14 @@ var layout = [
                   </p>
                 </div>
                 <AddList />
-                <GridLayout className="layout" layout={layout} cols={3} width={1200}>{this.props.listsArray && this.props.listsArray !== 0 ?
+                <ResponsiveGridLayout className="layout"
+                                      layout={layout}
+            /* cols={3} */
+                          breakpoints={{lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0}}
+                                      cols={{lg: 5, md: 4, sm: 3, xs: 2, xxs: 1}}
+                                      width={1200}
+                            draggableCancel="input,textarea" /* Cancel dragging on the input fields to allow focus and typing  */
+                >{this.props.listsArray && this.props.listsArray !== 0 ?
                     this.props.listsArray.map(list =>
                    <div key={"TodoComp" + list}>       
                             <TodoComp
@@ -54,7 +62,7 @@ var layout = [
                             {console.log(this.props.lists[list])}
                           </div>
                     ) : this.props.a}
-              </GridLayout>
+              </ResponsiveGridLayout>
               </div>
             </div>
 	);
