@@ -12,10 +12,11 @@ App lives in: https://manandearth.github.io/redux-todo/
 - Add todo list
 - DONE - rename lists  
 - TODO - rename todos
-- WIP - remove list
+- DONE - remove list
 - TODO - drag todos to re-order
-- TODO - css pad lists to make sense in page  
-- TODD - drag lists to reposition
+- TODO - a list frame grows on the y axis when todos are added
+- DONE - css pad lists to make sense in page  
+- DONE - drag lists to reposition
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
