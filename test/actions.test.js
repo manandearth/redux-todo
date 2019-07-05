@@ -17,6 +17,10 @@ describe('actions', () => {
   });
 });
 
+test('the best flavour is grapefruit', () => {
+	expect(2 + 3).toBe(5);
+});
+
 
 
 
