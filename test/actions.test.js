@@ -15,18 +15,34 @@ describe('actions', () => {
 		}};
       expect(actions.addTodo(text)).toEqual(expectedAction);
   });
+	it('should create an action to create a todolist', () => {
+		const title = 'new list';
+		const expectedAction = {
+			type: types.ADD_LIST,
+			payload: {
+				listId: 2,
+				list: title
+			}};
+		expect(actions.addList(title)).toEqual(expectedAction);
+	});
+
+	it('should set list filter to `completed`', () => {
+		const filter = 'completed';
+		const list = 1;
+		const expectedAction = {
+			type: types.SET_FILTER,
+			payload: {
+				list: list,
+				filter: filter}
+		};
+		expect(actions.setFilter(list, filter)).toEqual(expectedAction);
+	});
+		
+
+
+
 });
 
 test('the best flavour is grapefruit', () => {
 	expect(2 + 3).toBe(5);
 });
-
-
-
-
-
-// const Todo = require('../../src/components/Todo');
-
-// test('adds 1 + 2 to equal 3', () => {
-//   expect(sum(1, 2)).toBe(3);
-// });
