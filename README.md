@@ -19,6 +19,16 @@ App lives in: https://manandearth.github.io/redux-todo/
 - DONE - drag lists to reposition
 
 
+## Tests
+
+Uses jest:
+```
+npm install --save-dev react-test-renderer
+```
+
+
+## CREATE-REACT-APP 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
