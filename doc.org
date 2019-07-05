@@ -1,0 +1,22 @@
+* Redux-Todo - Documentation
+
+** Tests
+Create-React-App comes wth jest. follow:
+https://jestjs.io/docs/en/tutorial-react
+
+Getting this right required some manual installing but then npm complained and I ended up deleting the `package-lock.json` and `/node-modules` followed by `npm install`
+the config is:
+#+BEGIN_SRC json
+
+//.babelrc
+
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "plugins": ["@babel/plugin-proposal-class-properties"]
+
+  }
+#+END_SRC
+
+*** jestjs
+
+
