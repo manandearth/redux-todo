@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class Navbar extends React.Component {
     render(){
@@ -13,12 +12,5 @@ class Navbar extends React.Component {
     );
     }
 }
-
-
-var lineStyle = {
-    stroke: 'blue',
-    fill: 'yellowgreen',
-    strokeWidth: '1'
-};
 
 export default Navbar;

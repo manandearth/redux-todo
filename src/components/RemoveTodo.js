@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { removeTodo } from "../redux/actions";
-import { getTodoById } from "../redux/selectors.js";
 
 class RemoveTodo extends React.Component {
   constructor(props) {

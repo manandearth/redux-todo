@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import cx from "classnames";
 import RemoveTodo from "./RemoveTodo.js";
-import { toggleTodo, removeTodo } from "../redux/actions";
+import { toggleTodo } from "../redux/actions";
 
 
 
