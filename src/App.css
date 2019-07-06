@@ -4,6 +4,8 @@ body {
     sans-serif;
 }
 
+
+
 .todo-app {
  margin: 1.5rem;
 }
@@ -46,11 +48,7 @@ body {
     background: #214;
     color: white;
     width: 400px;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    padding-left: 0.5rem;
     line-height: 2;
-    margin-bottom: 1rem;
     border-radius: 10px;
     font-size: 1.2rem;
 }
@@ -59,10 +57,25 @@ body {
     color: lightblue;
 }
 
+.app-header p {
+    margin-bottom: -0.5rem;
+    padding-left: 0.5rem;
+    padding-bottom: 0.2rem;
+}
+
+.todo-comp-container {
+    overflow: visible;
+    max-height: 100%;
+}
+
 .todo-comp {
     background: #eee;
-    width: 400px;
-    border-radius: 15px;
+    /* width: 400px; */
+    border-radius: 10px;
+    overflow: visible;
+    padding-top: 0.5rem;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 /** add todo **/
@@ -139,3 +152,4 @@ input.rename-list {
 span.list-title {
     margin: 1rem;
 }
+
